@@ -100,7 +100,7 @@ function ProductFilters() {
   // console.log(state);
 
   return (
-    <div className="p-10 rounded-[10px] bg-[rgba(48,31,8,0.5)] shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.2)] max-w-3xs">
+    <div className="p-10 rounded-[10px] backdrop-blur-md shadow-[0px_4px_24px_-1px_rgba(0,0,0,0.2)] max-w-3xs h-fit">
       <form action={handleSubmit}>
         {/* Categories */}
         <h1 className="text-lg mb-2 text-white">Categories</h1>

@@ -7,7 +7,14 @@ import BagIcon from "@/assets/bagIcon.svg";
 
 function Navbar() {
   return (
-    <div className="flex items-center justify-between p-4 h-24 w-full">
+    <div className="flex items-center justify-between p-4 h-24 w-full bg-black/30 backdrop-blur-lg">
+      <h1
+        className="text-[#dab785] text-4xl my-6"
+        style={{ fontFamily: "var(--font-pressStart)" }}
+      >
+        GQ
+      </h1>
+
       <div className="flex items-center">
         <Link href={`/`} className="text-white/80">
           Home
@@ -15,7 +22,7 @@ function Navbar() {
 
         <div className="border-r-[1px] border-r-[rgba(255,255,255,0.3)] mx-4 h-8"></div>
 
-        <Link href={`/game-store`} className="text-white/80">
+        <Link href={`/products`} className="text-white/80">
           Game Store
         </Link>
 

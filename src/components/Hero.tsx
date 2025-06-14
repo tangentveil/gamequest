@@ -4,12 +4,8 @@ import Sidebar from "./Sidebar";
 
 function Hero() {
   return (
-    <section className="flex bg-black/30 min-h-screen w-full">
-      <Sidebar />
-      <div className="flex flex-col w-full">
-        <Navbar />
-        <HeroContent />
-      </div>
+    <section className="bg-black/30  w-full">
+      <HeroContent />
     </section>
   );
 }

@@ -24,17 +24,17 @@ function Sidebar() {
     {
       id: "2",
       icon: MailIcon,
-      text: "Mail",
+      text: "Messages",
     },
     {
       id: "3",
       icon: StoreIcon,
-      text: "Store",
+      text: "Game Store",
     },
     {
       id: "4",
       icon: WalletIcon,
-      text: "Store",
+      text: "Payments",
     },
     {
       id: "5",
@@ -44,7 +44,7 @@ function Sidebar() {
     {
       id: "6",
       icon: TrophyIcon,
-      text: "Store",
+      text: "Leaderboard",
     },
     {
       id: "7",
@@ -54,26 +54,43 @@ function Sidebar() {
     {
       id: "8",
       icon: SettingIcon,
-      text: "Store",
+      text: "Settings",
     },
     {
       id: "9",
       icon: LogoutIcon,
-      text: "Store",
+      text: "Logout",
     },
   ];
 
   const handleMouseEvent = () => {
     console.log("Hovered");
-    setIsHovered(true);
+    setIsHovered(!isHovered);
   };
 
   return (
-    <div className="flex flex-col items-center max-w-[120px] min-h-screen">
-      <div className="border-r-[1px] border-r-[rgba(255,255,255,0.3)] mx-4 min-h-screen absolute top-0 left-[103px]"></div>
-      <h1 className="text-[#dab785] text-4xl my-6">GQ</h1>
+    <div className="flex flex-col items-center max-w-[120px] min-h-screen border-r-[1px] border-r-[rgba(255,255,255,0.3)] bg-black/30">
+      {/* <h1
+        className="text-[#dab785] text-4xl my-6"
+        style={{ fontFamily: "var(--font-pressStart)" }}
+      >
+        GQ
+      </h1> */}
 
-      {isHovered && <FloatingSidebar sidebarList={sidebarList} />}
+      <div
+        className={`absolute top-0 left-0 z-50 transition-all duration-1000 ease-out
+    ${
+      isHovered
+        ? "opacity-100 translate-x-0"
+        : "opacity-0 -translate-x-4 pointer-events-none"
+    }`}
+        onMouseLeave={handleMouseEvent}
+      >
+        <FloatingSidebar
+          sidebarList={sidebarList}
+          handleMouseEvent={handleMouseEvent}
+        />
+      </div>
 
       <div onMouseEnter={handleMouseEvent}>
         {sidebarList.map((item, index) => {
